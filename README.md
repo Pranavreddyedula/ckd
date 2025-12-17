@@ -1,2 +1,19 @@
-# ckd
-A CNN-based system that predicts Chronic Kidney Disease using clinical parameters. The model provides real-time predictions with confidence scores, performance graphs, and medical visualization through an interactive web interface.
+# Chronic Kidney Disease Detection Using Machine Learning
+
+This project predicts Chronic Kidney Disease using clinical parameters and a trained ML model.
+
+## Features
+- CKD Prediction
+- Kidney visualization
+- Accuracy graph
+- Confusion matrix
+
+## Tech Stack
+- Python
+- Flask
+- Scikit-learn
+
+## Run Locally
+```bash
+pip install -r requirements.txt
+python app.py
