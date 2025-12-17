@@ -1,13 +1,17 @@
 from flask import Flask, render_template, request
 import numpy as np
 import joblib
+import os
 
 app = Flask(__name__)
 
-# Load trained model components
-model = joblib.load("ckd_model.pkl")
-scaler = joblib.load("scaler.pkl")
-imputer = joblib.load("imputer.pkl")
+# ---------------- PATH FIX FOR RENDER ----------------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model = joblib.load(os.path.join(BASE_DIR, "ckd_model.pkl"))
+scaler = joblib.load(os.path.join(BASE_DIR, "scaler.pkl"))
+imputer = joblib.load(os.path.join(BASE_DIR, "imputer.pkl"))
+# ----------------------------------------------------
 
 FEATURES = [
     'age','bp','sg','al','su','rbc','pc','pcc','ba','bgr','bu','sc',
