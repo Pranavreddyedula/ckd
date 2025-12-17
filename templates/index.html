@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CKD Detection</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Chronic Kidney Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
@@ -10,29 +10,66 @@
     <h1>🩺 Chronic Kidney Disease Detection</h1>
 
     <form method="POST">
-        {% for f in [
-        'age','bp','sg','al','su','rbc','pc','pcc','ba','bgr','bu','sc',
-        'sod','pot','hemo','pcv','wc','rc','htn','dm','cad','appet','pe','ane'
-        ] %}
-            <label>{{ f }}</label>
-            <input type="number" step="any" name="{{ f }}">
-        {% endfor %}
-        <button type="submit">Predict</button>
+
+    {% set labels = {
+    'age':'Age (years)',
+    'bp':'Blood Pressure (mm/Hg)',
+    'sg':'Specific Gravity',
+    'al':'Albumin',
+    'su':'Sugar',
+    'rbc':'Red Blood Cells (0=Abnormal, 1=Normal)',
+    'pc':'Pus Cell (0=Abnormal, 1=Normal)',
+    'pcc':'Pus Cell Clumps (0=No, 1=Yes)',
+    'ba':'Bacteria (0=No, 1=Yes)',
+    'bgr':'Blood Glucose Random (mg/dl)',
+    'bu':'Blood Urea (mg/dl)',
+    'sc':'Serum Creatinine (mg/dl)',
+    'sod':'Sodium (mEq/L)',
+    'pot':'Potassium (mEq/L)',
+    'hemo':'Hemoglobin (gms)',
+    'pcv':'Packed Cell Volume',
+    'wc':'White Blood Cell Count',
+    'rc':'Red Blood Cell Count',
+    'htn':'Hypertension (0=No, 1=Yes)',
+    'dm':'Diabetes Mellitus (0=No, 1=Yes)',
+    'cad':'Coronary Artery Disease (0=No, 1=Yes)',
+    'appet':'Appetite (0=Poor, 1=Good)',
+    'pe':'Pedal Edema (0=No, 1=Yes)',
+    'ane':'Anemia (0=No, 1=Yes)'
+    } %}
+
+    {% for f in labels %}
+        <label>{{ labels[f] }}</label>
+        <input type="number" step="any" name="{{ f }}"
+               value="{{ form_data.get(f, '') }}">
+    {% endfor %}
+
+    <button type="submit">Predict</button>
+
+    <!-- EXTRA BUTTONS -->
+    <button type="submit" name="fill_ckd">Auto-Fill CKD Sample</button>
+    <button type="submit" name="fill_normal">Auto-Fill Normal Sample</button>
+    <button type="submit" name="reset">Reset</button>
+
     </form>
 
     {% if result %}
     <div class="result">
         <h2>{{ result }}</h2>
 
-        <img src="{{ url_for('static', filename=image) }}" class="kidney-img">
+        <img src="{{ url_for('static', filename=image) }}"
+             class="kidney-img">
 
         <h3>Model Accuracy</h3>
-        <img src="{{ url_for('static', filename=accuracy_img) }}" class="graph-img">
+        <img src="{{ url_for('static', filename=accuracy_img) }}"
+             class="graph-img">
 
         <h3>Confusion Matrix</h3>
-        <img src="{{ url_for('static', filename=cm_img) }}" class="graph-img">
+        <img src="{{ url_for('static', filename=cm_img) }}"
+             class="graph-img">
     </div>
     {% endif %}
+
 </div>
 
 </body>
