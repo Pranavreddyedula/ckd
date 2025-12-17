@@ -1,179 +1,193 @@
-🩺 Chronic Kidney Disease Detection Using Machine Learning
-📌 Project Overview
+# 🩺 Chronic Kidney Disease Detection Using Machine Learning
 
-Chronic Kidney Disease (CKD) is a serious medical condition that can lead to kidney failure if not detected early. This project uses Machine Learning techniques to predict whether a patient is suffering from CKD based on clinical parameters. The system provides accurate predictions, visual results, and model performance evaluation through graphs.
+A complete **machine learning–based web application** to detect **Chronic Kidney Disease (CKD)** using clinical parameters. The system predicts whether a patient is affected by CKD or not and visually explains the model performance using accuracy graphs and a confusion matrix.
 
-This project is developed as part of a B.Tech Computer Science Engineering final-year project.
+---
 
-🎯 Objectives
+## 🔗 Live Application
 
-Early detection of Chronic Kidney Disease
+👉 **Deployed Web App (Render):**  
+[https://ckd-ezaz.onrender.com/](https://ckd-ezaz.onrender.com/)
 
-Reduce manual diagnosis errors
+👉 **GitHub Repository:**  
+[https://github.com/Pranavreddyedula/ckd](https://github.com/Pranavreddyedula/ckd)
 
-Provide visual and interpretable results
+---
 
-Build a user-friendly web-based prediction system
+## 🎓 Project Information
 
-🧠 Features
+**Project Title:** Chronic Kidney Disease Detection and Prediction Using Machine Learning Techniques  
+**Department:** Computer Science and Engineering (CSE – A)  
+**College:** Tirumala Engineering College, Andhra Pradesh
 
-✅ CKD / No CKD prediction
+### 👩‍🎓👨‍🎓 Batch – I (Team Members)
 
-🩺 Kidney image visualization based on result
+* 22NE1A0559 – Gunda Harika  \
+* 22NE1A0562 – Guntupalli Sravani  \
+* 22NE1A0546 – Galla Satish  \
+* 23NE5A0502 – Edula Sai Pranav Reddy
 
-📊 Accuracy graph display
+### 👨‍🏫 Project Guide
 
-📈 Confusion matrix for model evaluation
+**Dr. K. Satish sir**  
+Associate Professor, Department of CSE
 
-🌐 Web interface using Flask
+---
 
-📁 Easy deployment and GitHub-ready structure
+## 📌 Problem Statement
 
-🛠️ Tech Stack
-Category	Technology
-Programming Language	Python
-Web Framework	Flask
-ML Library	Scikit-learn
-Data Processing	NumPy
-Model Storage	Joblib
-Frontend	HTML, CSS
-Deployment Ready	Render
-📂 Project Structure
+Chronic Kidney Disease is a serious medical condition that often goes undetected in its early stages. Traditional diagnosis methods require extensive laboratory testing and expert medical evaluation. This project aims to provide a **fast, cost-effective, and accurate CKD prediction system** using machine learning techniques and a web-based interface.
+
+---
+
+## ⚙️ System Features
+
+* ✔ Predicts **CKD / No CKD** using clinical parameters
+* ✔ Retains user input values after prediction
+* ✔ Auto-fill **CKD Sample** and **Normal Sample** data
+* ✔ Reset functionality
+* ✔ Visual output using **kidney images**
+* ✔ Displays **Model Accuracy Graph**
+* ✔ Displays **Confusion Matrix**
+* ✔ Deployed as a **Flask web application**
+
+---
+
+## 🧪 Input Parameters
+
+The system uses the following medical attributes:
+
+* Age (years)
+* Blood Pressure (mm/Hg)
+* Specific Gravity
+* Albumin
+* Sugar
+* Red Blood Cells
+* Pus Cell
+* Pus Cell Clumps
+* Bacteria
+* Blood Glucose Random (mg/dl)
+* Blood Urea (mg/dl)
+* Serum Creatinine (mg/dl)
+* Sodium (mEq/L)
+* Potassium (mEq/L)
+* Hemoglobin (gms)
+* Packed Cell Volume
+* White Blood Cell Count
+* Red Blood Cell Count
+* Hypertension
+* Diabetes Mellitus
+* Coronary Artery Disease
+* Appetite
+* Pedal Edema
+* Anemia
+
+*(Binary values: 0 = No / Abnormal, 1 = Yes / Normal)*
+
+---
+
+## 📊 Model Performance
+
+### ✔ Accuracy
+
+The trained model achieves **high training and testing accuracy**, indicating good generalization performance.
+
+### ✔ Confusion Matrix
+
+* True Positives (CKD correctly predicted)
+* True Negatives (Healthy correctly predicted)
+* Very low false positives and false negatives
+
+These metrics confirm the reliability of the proposed system.
+
+---
+
+## 🖼️ Application Output
+
+* **CKD Detected:** Displays diseased kidney image
+* **No CKD:** Displays healthy kidney image
+* Model Accuracy graph
+* Confusion Matrix visualization
+
+---
+
+## 🧠 Technology Stack
+
+* **Programming Language:** Python
+* **Machine Learning:** Scikit-learn
+* **Web Framework:** Flask
+* **Frontend:** HTML, CSS
+* **Deployment:** Render Cloud Platform
+
+---
+
+## 📁 Project Structure
+
+```text
 ckd/
 │
-├── app.py
-├── requirements.txt
-├── runtime.txt
-├── README.md
-│
-├── ckd_model.pkl
-├── scaler.pkl
-├── imputer.pkl
-│
 ├── static/
-│   ├── style.css
 │   ├── accuracy.png
 │   ├── confusion_matrix.png
 │   ├── ckd_kidney.png
-│   └── healthy_kidney.png
+│   ├── healthy_kidney.png
+│   └── style.css
 │
 ├── templates/
 │   └── index.html
 │
-└── Chronic-Kidney-Disease-Detection-Using-Machine-Learning-final.pptx
+├── app.py
+├── ckd_model.pkl
+├── scaler.pkl
+├── imputer.pkl
+├── requirements.txt
+├── runtime.txt
+└── README.md
+```
 
-🧪 Input Parameters
+---
 
-The model uses the following clinical features:
+## 🚀 How to Run Locally
 
-age, bp, sg, al, su, rbc, pc, pcc, ba,
-bgr, bu, sc, sod, pot, hemo, pcv, wc,
-rc, htn, dm, cad, appet, pe, ane
-
-
-Note: Binary values are encoded as
-0 = No / Abnormal, 1 = Yes / Normal
-
-⚙️ How It Works
-
-User enters patient medical details
-
-Input data is preprocessed using:
-
-Missing value imputer
-
-Feature scaler
-
-Trained ML model predicts CKD status
-
-Output is displayed with:
-
-Result message
-
-Kidney image
-
-Accuracy graph
-
-Confusion matrix
-
-🚀 Run the Project Locally
-Step 1: Clone Repository
+```bash
 git clone https://github.com/Pranavreddyedula/ckd.git
 cd ckd
-
-Step 2: Install Dependencies
 pip install -r requirements.txt
-
-Step 3: Run Flask App
 python app.py
+```
 
-Step 4: Open Browser
-http://127.0.0.1:5000/
+Then open: `http://127.0.0.1:5000/`
 
-📊 Model Performance
+---
 
-Training Accuracy: ~99%
+## 🎯 Expected Output
 
-Testing Accuracy: ~97%
+* User enters patient details
+* Clicks **Predict**
+* System displays:
 
-Evaluation Metrics:
+  * CKD / No CKD result
+  * Kidney image
+  * Accuracy graph
+  * Confusion matrix
 
-Accuracy
+---
 
-Confusion Matrix
+## 🧾 Conclusion
 
-True Positives & Negatives
+This project demonstrates the effective use of machine learning techniques for early detection of Chronic Kidney Disease. The system provides accurate predictions, clear visual explanations, and a user-friendly web interface. It can assist healthcare professionals and students in understanding CKD diagnosis using data-driven approaches.
 
-🧩 Output Screens
+---
 
-CKD detected → Diseased kidney image
+## 🔮 Future Enhancements
 
-No CKD → Healthy kidney image
+* Integration with real hospital datasets
+* CKD stage-wise prediction
+* Mobile application support
+* Deep learning–based prediction models
 
-Accuracy bar graph
 
-Confusion matrix heatmap
 
-🎓 Academic Use
 
-This project is suitable for:
 
-B.Tech CSE Final Year Project
 
-Mini Projects
-
-Machine Learning Labs
-
-IEEE-style Project Reports
-
-Viva & Demonstrations
-
-⚠️ Limitations
-
-Model trained on limited dataset
-
-Real-world diagnosis requires doctor confirmation
-
-Performance may vary with unseen data
-
-🔮 Future Enhancements
-
-Deep Learning-based prediction
-
-Real-time hospital data integration
-
-Cloud database support
-
-Mobile application
-
-Multi-disease prediction system
-
-👨‍🎓 Author
-
-Edula Sai Pranav Reddy
-B.Tech Computer Science Engineering
-GitHub: https://github.com/Pranavreddyedula
-
-📜 License
-
-This project is developed for educational purposes only.
